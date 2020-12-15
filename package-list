@@ -1,0 +1,6 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.juul.kable/IOException/cause/#/PointingToDeclaration/com.juul.kable/-i-o-exception/[macos-x64]cause.html
+$dokka.location:com.juul.kable/IOException/message/#/PointingToDeclaration/com.juul.kable/-i-o-exception/[macos-x64]message.html
+com.juul.kable
+
