@@ -8,6 +8,7 @@ import android.bluetooth.BluetoothGattDescriptor
 import android.bluetooth.BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE
 import android.bluetooth.BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE
 import com.benasher44.uuid.uuidFrom
+import com.juul.kable.Peripheral.Configuration
 import com.juul.kable.WriteType.WithResponse
 import com.juul.kable.WriteType.WithoutResponse
 import com.juul.kable.external.CLIENT_CHARACTERISTIC_CONFIG_UUID
@@ -37,15 +38,31 @@ private val clientCharacteristicConfigUuid = uuidFrom(CLIENT_CHARACTERISTIC_CONF
 
 public actual fun CoroutineScope.peripheral(
     advertisement: Advertisement,
-): Peripheral = peripheral(advertisement.bluetoothDevice)
+): Peripheral = AndroidPeripheral(
+    coroutineContext,
+    advertisement.bluetoothDevice,
+    Configuration.Default
+)
+
+public actual fun CoroutineScope.peripheral(
+    advertisement: Advertisement,
+    configuration: Configuration,
+    builderAction: Configuration.Builder.() -> Unit,
+): Peripheral = peripheral(advertisement.bluetoothDevice, configuration, builderAction)
 
 public fun CoroutineScope.peripheral(
     bluetoothDevice: BluetoothDevice,
-): Peripheral = AndroidPeripheral(coroutineContext, bluetoothDevice)
+    configuration: Configuration,
+    builderAction: Configuration.Builder.() -> Unit,
+): Peripheral {
+    val builder = Configuration.Builder(configuration).apply(builderAction)
+    return AndroidPeripheral(coroutineContext, bluetoothDevice, builder.build())
+}
 
 public class AndroidPeripheral internal constructor(
     parentCoroutineContext: CoroutineContext,
     private val bluetoothDevice: BluetoothDevice,
+    private val configuration: Configuration,
 ) : Peripheral {
 
     private val job = SupervisorJob(parentCoroutineContext[Job]).apply {
@@ -192,21 +209,25 @@ public class AndroidPeripheral internal constructor(
         val bluetoothGattCharacteristic = bluetoothGattCharacteristicFrom(characteristic)
         connection.bluetoothGatt.setCharacteristicNotification(bluetoothGattCharacteristic, true)
 
-        val descriptor = LazyDescriptor(
-            serviceUuid = characteristic.serviceUuid,
-            characteristicUuid = characteristic.characteristicUuid,
-            descriptorUuid = clientCharacteristicConfigUuid
-        )
-        write(descriptor, ENABLE_NOTIFICATION_VALUE)
+        if (configuration.writeObserveDescriptors) {
+            val descriptor = LazyDescriptor(
+                serviceUuid = characteristic.serviceUuid,
+                characteristicUuid = characteristic.characteristicUuid,
+                descriptorUuid = clientCharacteristicConfigUuid
+            )
+            write(descriptor, ENABLE_NOTIFICATION_VALUE)
+        }
     }
 
     internal suspend fun stopNotifications(characteristic: Characteristic) {
-        val descriptor = LazyDescriptor(
-            serviceUuid = characteristic.serviceUuid,
-            characteristicUuid = characteristic.characteristicUuid,
-            descriptorUuid = clientCharacteristicConfigUuid
-        )
-        write(descriptor, DISABLE_NOTIFICATION_VALUE)
+        if (configuration.writeObserveDescriptors) {
+            val descriptor = LazyDescriptor(
+                serviceUuid = characteristic.serviceUuid,
+                characteristicUuid = characteristic.characteristicUuid,
+                descriptorUuid = clientCharacteristicConfigUuid
+            )
+            write(descriptor, DISABLE_NOTIFICATION_VALUE)
+        }
 
         val bluetoothGattCharacteristic = bluetoothGattCharacteristicFrom(characteristic)
         connection.bluetoothGatt.setCharacteristicNotification(bluetoothGattCharacteristic, false)

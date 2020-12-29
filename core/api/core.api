@@ -136,6 +136,7 @@ public final class com/juul/kable/OutOfOrderGattCallbackException : java/lang/Il
 }
 
 public abstract interface class com/juul/kable/Peripheral {
+	public static final field Companion Lcom/juul/kable/Peripheral$Companion;
 	public abstract fun connect (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun disconnect (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun getServices ()Ljava/util/List;
@@ -148,13 +149,40 @@ public abstract interface class com/juul/kable/Peripheral {
 	public abstract fun write (Lcom/juul/kable/Descriptor;[BLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
+public final class com/juul/kable/Peripheral$Companion {
+	public final fun Configuration (Lkotlin/jvm/functions/Function1;)Lcom/juul/kable/Peripheral$Configuration;
+}
+
+public final class com/juul/kable/Peripheral$Configuration {
+	public static final field Companion Lcom/juul/kable/Peripheral$Configuration$Companion;
+	public fun <init> ()V
+	public final fun component1 ()Z
+	public final fun copy (Z)Lcom/juul/kable/Peripheral$Configuration;
+	public static synthetic fun copy$default (Lcom/juul/kable/Peripheral$Configuration;ZILjava/lang/Object;)Lcom/juul/kable/Peripheral$Configuration;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getWriteObserveDescriptors ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/juul/kable/Peripheral$Configuration$Builder {
+	public final fun getWriteObserveDescriptors ()Z
+	public final fun setWriteObserveDescriptors (Z)V
+}
+
+public final class com/juul/kable/Peripheral$Configuration$Companion {
+	public final fun getDefault ()Lcom/juul/kable/Peripheral$Configuration;
+}
+
 public final class com/juul/kable/Peripheral$DefaultImpls {
 	public static synthetic fun write$default (Lcom/juul/kable/Peripheral;Lcom/juul/kable/Characteristic;[BLcom/juul/kable/WriteType;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 }
 
 public final class com/juul/kable/PeripheralKt {
-	public static final fun peripheral (Lkotlinx/coroutines/CoroutineScope;Landroid/bluetooth/BluetoothDevice;)Lcom/juul/kable/Peripheral;
+	public static final fun peripheral (Lkotlinx/coroutines/CoroutineScope;Landroid/bluetooth/BluetoothDevice;Lcom/juul/kable/Peripheral$Configuration;Lkotlin/jvm/functions/Function1;)Lcom/juul/kable/Peripheral;
 	public static final fun peripheral (Lkotlinx/coroutines/CoroutineScope;Lcom/juul/kable/Advertisement;)Lcom/juul/kable/Peripheral;
+	public static final fun peripheral (Lkotlinx/coroutines/CoroutineScope;Lcom/juul/kable/Advertisement;Lcom/juul/kable/Peripheral$Configuration;Lkotlin/jvm/functions/Function1;)Lcom/juul/kable/Peripheral;
+	public static synthetic fun peripheral$default (Lkotlinx/coroutines/CoroutineScope;Lcom/juul/kable/Advertisement;Lcom/juul/kable/Peripheral$Configuration;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lcom/juul/kable/Peripheral;
 }
 
 public final class com/juul/kable/ScanFailedException : java/lang/IllegalStateException {

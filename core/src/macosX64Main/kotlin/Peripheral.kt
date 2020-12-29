@@ -5,6 +5,7 @@ import com.juul.kable.CentralManagerDelegate.ConnectionEvent
 import com.juul.kable.CentralManagerDelegate.ConnectionEvent.DidConnect
 import com.juul.kable.CentralManagerDelegate.ConnectionEvent.DidDisconnect
 import com.juul.kable.CentralManagerDelegate.ConnectionEvent.DidFailToConnect
+import com.juul.kable.Peripheral.Configuration
 import com.juul.kable.PeripheralDelegate.DidUpdateValueForCharacteristic
 import com.juul.kable.PeripheralDelegate.DidUpdateValueForCharacteristic.Closed
 import com.juul.kable.PeripheralDelegate.DidUpdateValueForCharacteristic.Data
@@ -70,12 +71,22 @@ import kotlin.native.concurrent.freeze
 
 public actual fun CoroutineScope.peripheral(
     advertisement: Advertisement,
-): Peripheral = ApplePeripheral(coroutineContext, advertisement.cbPeripheral)
+): Peripheral = ApplePeripheral(coroutineContext, advertisement.cbPeripheral, Configuration.Default)
+
+public actual fun CoroutineScope.peripheral(
+    advertisement: Advertisement,
+    configuration: Configuration,
+    builderAction: Configuration.Builder.() -> Unit,
+): Peripheral {
+    val builder = Configuration.Builder(configuration).apply(builderAction)
+    return ApplePeripheral(coroutineContext, advertisement.cbPeripheral, builder.build())
+}
 
 @OptIn(ExperimentalStdlibApi::class) // for CancellationException in @Throws
 public class ApplePeripheral internal constructor(
     parentCoroutineContext: CoroutineContext,
     private val cbPeripheral: CBPeripheral,
+    private val configuration: Configuration,
 ) : Peripheral {
 
     private val job = Job(parentCoroutineContext.job) // todo: Disconnect/dispose CBPeripheral on completion?

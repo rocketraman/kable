@@ -2,6 +2,7 @@
 
 package com.juul.kable
 
+import com.juul.kable.Peripheral.Configuration
 import com.juul.kable.WriteType.WithResponse
 import com.juul.kable.WriteType.WithoutResponse
 import com.juul.kable.external.BluetoothAdvertisingEvent
@@ -33,15 +34,31 @@ private const val ADVERTISEMENT_RECEIVED = "advertisementreceived"
 
 public actual fun CoroutineScope.peripheral(
     advertisement: Advertisement,
-): Peripheral = peripheral(advertisement.bluetoothDevice)
+): Peripheral = JsPeripheral(coroutineContext, advertisement.bluetoothDevice, Configuration.Default)
+
+public actual fun CoroutineScope.peripheral(
+    advertisement: Advertisement,
+    configuration: Configuration,
+    builderAction: Configuration.Builder.() -> Unit,
+): Peripheral = peripheral(advertisement.bluetoothDevice, configuration, builderAction)
 
 internal fun CoroutineScope.peripheral(
     bluetoothDevice: BluetoothDevice,
-) = JsPeripheral(coroutineContext, bluetoothDevice)
+): Peripheral = JsPeripheral(coroutineContext, bluetoothDevice, Configuration.Default)
+
+internal fun CoroutineScope.peripheral(
+    bluetoothDevice: BluetoothDevice,
+    configuration: Configuration,
+    builderAction: Configuration.Builder.() -> Unit,
+): JsPeripheral {
+    val builder = Configuration.Builder(configuration).apply(builderAction)
+    return JsPeripheral(coroutineContext, bluetoothDevice, builder.build())
+}
 
 public class JsPeripheral internal constructor(
     parentCoroutineContext: CoroutineContext,
     private val bluetoothDevice: BluetoothDevice,
+    private val configuration: Configuration,
 ) : Peripheral {
 
     private val job = Job(parentCoroutineContext.job).apply {

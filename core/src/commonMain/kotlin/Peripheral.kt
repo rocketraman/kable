@@ -2,6 +2,7 @@
 
 package com.juul.kable
 
+import com.juul.kable.Peripheral.Configuration
 import com.juul.kable.WriteType.WithoutResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
@@ -9,6 +10,12 @@ import kotlin.coroutines.cancellation.CancellationException
 
 public expect fun CoroutineScope.peripheral(
     advertisement: Advertisement,
+): Peripheral
+
+public expect fun CoroutineScope.peripheral(
+    advertisement: Advertisement,
+    configuration: Configuration = Configuration.Default,
+    builderAction: Configuration.Builder.() -> Unit,
 ): Peripheral
 
 public enum class WriteType {
@@ -120,4 +127,39 @@ public interface Peripheral {
     public fun observe(
         characteristic: Characteristic,
     ): Flow<ByteArray>
+
+    public companion object {
+        @Suppress("FunctionName")
+        public fun Configuration(
+            builder: Configuration.Builder.() -> Unit
+        ): Configuration = Configuration.Builder(Configuration.Default).apply(builder).build()
+    }
+
+    public data class Configuration internal constructor(
+        public val writeObserveDescriptors: Boolean = true,
+    ) {
+
+        public companion object {
+            public val Default: Configuration = Configuration()
+        }
+
+        public class Builder internal constructor(
+            configuration: Configuration
+        ) {
+
+            /**
+             * By default, when an observation is spun up/down, `BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE`
+             * (`0x01`, `0x00`) is written to client config characteristic (0x2902). If a remote peripheral does not
+             * properly handle this behavior then it may be disabled by setting [writeObserveDescriptors] to `false`.
+             *
+             * Android only.
+             * Default: `true`
+             */
+            public var writeObserveDescriptors: Boolean = configuration.writeObserveDescriptors
+
+            internal fun build(): Configuration = Configuration(
+                writeObserveDescriptors = writeObserveDescriptors,
+            )
+        }
+    }
 }
