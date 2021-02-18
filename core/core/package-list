@@ -1,6 +1,34 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:com.juul.kable/Advertisement/component1/#/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]component1.html
+$dokka.location:com.juul.kable/Advertisement/component2/#/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]component2.html
+$dokka.location:com.juul.kable/Advertisement/copy/#kotlin.Int#kotlin.collections.Map[kotlin.String,kotlin.Any]#/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]copy.html
+$dokka.location:com.juul.kable/Advertisement/data/#/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]data.html
+$dokka.location:com.juul.kable/Advertisement/identifier/#/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]identifier.html
+$dokka.location:com.juul.kable/Advertisement/manufacturerDataAsNSData/#/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]manufacturer-data-as-n-s-data.html
+$dokka.location:com.juul.kable/Advertisement/manufacturerDataAsNSData/#kotlin.Int/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]manufacturer-data-as-n-s-data.html
+$dokka.location:com.juul.kable/Advertisement/serviceDataAsNSData/#com.benasher44.uuid.Uuid/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]service-data-as-n-s-data.html
 $dokka.location:com.juul.kable/Advertisement/toString/#/PointingToDeclaration/com.juul.kable/-advertisement/[macos-x64]to-string.html
+$dokka.location:com.juul.kable/ApplePeripheral///PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/index.html
+$dokka.location:com.juul.kable/ApplePeripheral/connect/#/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/connect.html
+$dokka.location:com.juul.kable/ApplePeripheral/disconnect/#/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/disconnect.html
+$dokka.location:com.juul.kable/ApplePeripheral/observe/#com.juul.kable.Characteristic/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/observe.html
+$dokka.location:com.juul.kable/ApplePeripheral/observeAsNSData/#com.juul.kable.Characteristic/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/observe-as-n-s-data.html
+$dokka.location:com.juul.kable/ApplePeripheral/read/#com.juul.kable.Characteristic/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/read.html
+$dokka.location:com.juul.kable/ApplePeripheral/read/#com.juul.kable.Descriptor/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/read.html
+$dokka.location:com.juul.kable/ApplePeripheral/readAsNSData/#com.juul.kable.Characteristic/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/read-as-n-s-data.html
+$dokka.location:com.juul.kable/ApplePeripheral/readAsNSData/#com.juul.kable.Descriptor/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/read-as-n-s-data.html
+$dokka.location:com.juul.kable/ApplePeripheral/rssi/#/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/rssi.html
+$dokka.location:com.juul.kable/ApplePeripheral/services/#/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/services.html
+$dokka.location:com.juul.kable/ApplePeripheral/state/#/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/state.html
+$dokka.location:com.juul.kable/ApplePeripheral/toString/#/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/to-string.html
+$dokka.location:com.juul.kable/ApplePeripheral/write/#com.juul.kable.Characteristic##com.juul.kable.WriteType/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/write.html
+$dokka.location:com.juul.kable/ApplePeripheral/write/#com.juul.kable.Characteristic#kotlin.ByteArray#com.juul.kable.WriteType/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/write.html
+$dokka.location:com.juul.kable/ApplePeripheral/write/#com.juul.kable.Descriptor#/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/write.html
+$dokka.location:com.juul.kable/ApplePeripheral/write/#com.juul.kable.Descriptor#kotlin.ByteArray/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-peripheral/write.html
+$dokka.location:com.juul.kable/AppleScanner///PointingToDeclaration/com.juul.kable/[macos-x64]-apple-scanner/index.html
+$dokka.location:com.juul.kable/AppleScanner/advertisements/#/PointingToDeclaration/com.juul.kable/[macos-x64]-apple-scanner/advertisements.html
+$dokka.location:com.juul.kable/CentralManager///PointingToDeclaration/com.juul.kable/[macos-x64]-central-manager/index.html
 $dokka.location:com.juul.kable/IOException/cause/#/PointingToDeclaration/com.juul.kable/-i-o-exception/[macos-x64]cause.html
 $dokka.location:com.juul.kable/IOException/message/#/PointingToDeclaration/com.juul.kable/-i-o-exception/[macos-x64]message.html
 com.juul.kable
