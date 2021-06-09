@@ -6,10 +6,11 @@ $dokka.location:com.juul.kable//characteristicOf/#kotlin.String#kotlin.String/Po
 $dokka.location:com.juul.kable//descriptorOf/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable/descriptor-of.html
 $dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#android.bluetooth.BluetoothDevice#com.juul.kable.Transport#com.juul.kable.Phy/PointingToDeclaration/core/com.juul.kable/peripheral.html
 $dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#android.bluetooth.BluetoothDevice#com.juul.kable.WriteNotificationDescriptor/PointingToDeclaration/core/com.juul.kable/peripheral.html
+$dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#android.bluetooth.BluetoothDevice#kotlin.Function1[com.juul.kable.PeripheralBuilder,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/peripheral.html
 $dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#com.juul.kable.Advertisement#com.juul.kable.Transport#com.juul.kable.Phy/PointingToDeclaration/core/com.juul.kable/peripheral.html
 $dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#com.juul.kable.Advertisement#com.juul.kable.WriteNotificationDescriptor/PointingToDeclaration/core/com.juul.kable/peripheral.html
-$dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#com.juul.kable.Advertisement/PointingToDeclaration/core/com.juul.kable/peripheral.html
-$dokka.location:com.juul.kable//requestPeripheral/kotlinx.coroutines.CoroutineScope#com.juul.kable.Options/PointingToDeclaration/core/com.juul.kable/request-peripheral.html
+$dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#com.juul.kable.Advertisement#kotlin.Function1[com.juul.kable.PeripheralBuilder,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/peripheral.html
+$dokka.location:com.juul.kable//requestPeripheral/kotlinx.coroutines.CoroutineScope#com.juul.kable.Options#kotlin.Function1[com.juul.kable.PeripheralBuilder,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/request-peripheral.html
 $dokka.location:com.juul.kable/Advertisement///PointingToDeclaration/core/com.juul.kable/-advertisement/index.html
 $dokka.location:com.juul.kable/Advertisement/Advertisement/#android.bluetooth.le.ScanResult/PointingToDeclaration/core/com.juul.kable/-advertisement/-advertisement.html
 $dokka.location:com.juul.kable/Advertisement/Advertisement/#kotlin.Int#kotlin.collections.Map[kotlin.String,kotlin.Any]#CBPeripheral/PointingToDeclaration/core/com.juul.kable/-advertisement/-advertisement.html
@@ -160,6 +161,10 @@ $dokka.location:com.juul.kable/Peripheral/services/#/PointingToDeclaration/core
 $dokka.location:com.juul.kable/Peripheral/state/#/PointingToDeclaration/core/com.juul.kable/-peripheral/state.html
 $dokka.location:com.juul.kable/Peripheral/write/#com.juul.kable.Characteristic#kotlin.ByteArray#com.juul.kable.WriteType/PointingToDeclaration/core/com.juul.kable/-peripheral/write.html
 $dokka.location:com.juul.kable/Peripheral/write/#com.juul.kable.Descriptor#kotlin.ByteArray/PointingToDeclaration/core/com.juul.kable/-peripheral/write.html
+$dokka.location:com.juul.kable/PeripheralBuilder///PointingToDeclaration/core/com.juul.kable/-peripheral-builder/index.html
+$dokka.location:com.juul.kable/PeripheralBuilder/onServicesDiscovered/#kotlin.coroutines.SuspendFunction1[com.juul.kable.ServicesDiscoveredPeripheral,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-peripheral-builder/on-services-discovered.html
+$dokka.location:com.juul.kable/PeripheralBuilder/phy/#/PointingToDeclaration/core/com.juul.kable/-peripheral-builder/phy.html
+$dokka.location:com.juul.kable/PeripheralBuilder/transport/#/PointingToDeclaration/core/com.juul.kable/-peripheral-builder/transport.html
 $dokka.location:com.juul.kable/Phy.Le1M///PointingToDeclaration/core/com.juul.kable/-phy/-le1-m/index.html
 $dokka.location:com.juul.kable/Phy.Le1M/name/#/PointingToDeclaration/core/com.juul.kable/-phy/-le1-m/name.html
 $dokka.location:com.juul.kable/Phy.Le1M/ordinal/#/PointingToDeclaration/core/com.juul.kable/-phy/-le1-m/ordinal.html
@@ -176,6 +181,12 @@ $dokka.location:com.juul.kable/Scanner///PointingToDeclaration/core/com.juul.ka
 $dokka.location:com.juul.kable/Scanner/advertisements/#/PointingToDeclaration/core/com.juul.kable/-scanner/advertisements.html
 $dokka.location:com.juul.kable/Service///PointingToDeclaration/core/com.juul.kable/-service/index.html
 $dokka.location:com.juul.kable/Service/serviceUuid/#/PointingToDeclaration/core/com.juul.kable/-service/service-uuid.html
+$dokka.location:com.juul.kable/ServicesDiscoveredPeripheral///PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/index.html
+$dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/read/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/read.html
+$dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/read/#com.juul.kable.Descriptor/PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/read.html
+$dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/requestMtu/#kotlin.Int/PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/request-mtu.html
+$dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/write/#com.juul.kable.Characteristic#kotlin.ByteArray#com.juul.kable.WriteType/PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/write.html
+$dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/write/#com.juul.kable.Descriptor#kotlin.ByteArray/PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/write.html
 $dokka.location:com.juul.kable/State.Connected///PointingToDeclaration/core/com.juul.kable/-state/-connected/index.html
 $dokka.location:com.juul.kable/State.Connecting///PointingToDeclaration/core/com.juul.kable/-state/-connecting/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.Cancelled///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-cancelled/index.html
