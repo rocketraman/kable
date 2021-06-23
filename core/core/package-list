@@ -34,7 +34,7 @@ $dokka.location:com.juul.kable/Advertisement/uuids/#/PointingToDeclaration/core
 $dokka.location:com.juul.kable/AndroidPeripheral///PointingToDeclaration/core/com.juul.kable/-android-peripheral/index.html
 $dokka.location:com.juul.kable/AndroidPeripheral/connect/#/PointingToDeclaration/core/com.juul.kable/-android-peripheral/connect.html
 $dokka.location:com.juul.kable/AndroidPeripheral/disconnect/#/PointingToDeclaration/core/com.juul.kable/-android-peripheral/disconnect.html
-$dokka.location:com.juul.kable/AndroidPeripheral/observe/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-android-peripheral/observe.html
+$dokka.location:com.juul.kable/AndroidPeripheral/observe/#com.juul.kable.Characteristic#kotlin.coroutines.SuspendFunction0[kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-android-peripheral/observe.html
 $dokka.location:com.juul.kable/AndroidPeripheral/read/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-android-peripheral/read.html
 $dokka.location:com.juul.kable/AndroidPeripheral/read/#com.juul.kable.Descriptor/PointingToDeclaration/core/com.juul.kable/-android-peripheral/read.html
 $dokka.location:com.juul.kable/AndroidPeripheral/requestMtu/#kotlin.Int/PointingToDeclaration/core/com.juul.kable/-android-peripheral/request-mtu.html
@@ -49,8 +49,8 @@ $dokka.location:com.juul.kable/AndroidScanner/advertisements/#/PointingToDeclara
 $dokka.location:com.juul.kable/ApplePeripheral///PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/index.html
 $dokka.location:com.juul.kable/ApplePeripheral/connect/#/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/connect.html
 $dokka.location:com.juul.kable/ApplePeripheral/disconnect/#/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/disconnect.html
-$dokka.location:com.juul.kable/ApplePeripheral/observe/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/observe.html
-$dokka.location:com.juul.kable/ApplePeripheral/observeAsNSData/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/observe-as-n-s-data.html
+$dokka.location:com.juul.kable/ApplePeripheral/observe/#com.juul.kable.Characteristic#kotlin.coroutines.SuspendFunction0[kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/observe.html
+$dokka.location:com.juul.kable/ApplePeripheral/observeAsNSData/#com.juul.kable.Characteristic#kotlin.coroutines.SuspendFunction0[kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/observe-as-n-s-data.html
 $dokka.location:com.juul.kable/ApplePeripheral/read/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/read.html
 $dokka.location:com.juul.kable/ApplePeripheral/read/#com.juul.kable.Descriptor/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/read.html
 $dokka.location:com.juul.kable/ApplePeripheral/readAsNSData/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/read-as-n-s-data.html
@@ -99,8 +99,8 @@ $dokka.location:com.juul.kable/IOException///PointingToDeclaration/core/com.juu
 $dokka.location:com.juul.kable/JsPeripheral///PointingToDeclaration/core/com.juul.kable/-js-peripheral/index.html
 $dokka.location:com.juul.kable/JsPeripheral/connect/#/PointingToDeclaration/core/com.juul.kable/-js-peripheral/connect.html
 $dokka.location:com.juul.kable/JsPeripheral/disconnect/#/PointingToDeclaration/core/com.juul.kable/-js-peripheral/disconnect.html
-$dokka.location:com.juul.kable/JsPeripheral/observe/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-js-peripheral/observe.html
-$dokka.location:com.juul.kable/JsPeripheral/observeDataView/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-js-peripheral/observe-data-view.html
+$dokka.location:com.juul.kable/JsPeripheral/observe/#com.juul.kable.Characteristic#kotlin.coroutines.SuspendFunction0[kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-js-peripheral/observe.html
+$dokka.location:com.juul.kable/JsPeripheral/observeDataView/#com.juul.kable.Characteristic#kotlin.coroutines.SuspendFunction0[kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-js-peripheral/observe-data-view.html
 $dokka.location:com.juul.kable/JsPeripheral/read/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-js-peripheral/read.html
 $dokka.location:com.juul.kable/JsPeripheral/read/#com.juul.kable.Descriptor/PointingToDeclaration/core/com.juul.kable/-js-peripheral/read.html
 $dokka.location:com.juul.kable/JsPeripheral/readAsDataView/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-js-peripheral/read-as-data-view.html
@@ -153,7 +153,7 @@ $dokka.location:com.juul.kable/OutOfOrderGattCallbackException///PointingToDecla
 $dokka.location:com.juul.kable/Peripheral///PointingToDeclaration/core/com.juul.kable/-peripheral/index.html
 $dokka.location:com.juul.kable/Peripheral/connect/#/PointingToDeclaration/core/com.juul.kable/-peripheral/connect.html
 $dokka.location:com.juul.kable/Peripheral/disconnect/#/PointingToDeclaration/core/com.juul.kable/-peripheral/disconnect.html
-$dokka.location:com.juul.kable/Peripheral/observe/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-peripheral/observe.html
+$dokka.location:com.juul.kable/Peripheral/observe/#com.juul.kable.Characteristic#kotlin.coroutines.SuspendFunction0[kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-peripheral/observe.html
 $dokka.location:com.juul.kable/Peripheral/read/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-peripheral/read.html
 $dokka.location:com.juul.kable/Peripheral/read/#com.juul.kable.Descriptor/PointingToDeclaration/core/com.juul.kable/-peripheral/read.html
 $dokka.location:com.juul.kable/Peripheral/rssi/#/PointingToDeclaration/core/com.juul.kable/-peripheral/rssi.html
