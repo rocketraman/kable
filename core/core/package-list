@@ -37,6 +37,7 @@ $dokka.location:com.juul.kable/AndroidPeripheral/disconnect/#/PointingToDeclarat
 $dokka.location:com.juul.kable/AndroidPeripheral/observe/#com.juul.kable.Characteristic#kotlin.coroutines.SuspendFunction0[kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-android-peripheral/observe.html
 $dokka.location:com.juul.kable/AndroidPeripheral/read/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-android-peripheral/read.html
 $dokka.location:com.juul.kable/AndroidPeripheral/read/#com.juul.kable.Descriptor/PointingToDeclaration/core/com.juul.kable/-android-peripheral/read.html
+$dokka.location:com.juul.kable/AndroidPeripheral/requestConnectionPriority/#com.juul.kable.Priority/PointingToDeclaration/core/com.juul.kable/-android-peripheral/request-connection-priority.html
 $dokka.location:com.juul.kable/AndroidPeripheral/requestMtu/#kotlin.Int/PointingToDeclaration/core/com.juul.kable/-android-peripheral/request-mtu.html
 $dokka.location:com.juul.kable/AndroidPeripheral/rssi/#/PointingToDeclaration/core/com.juul.kable/-android-peripheral/rssi.html
 $dokka.location:com.juul.kable/AndroidPeripheral/services/#/PointingToDeclaration/core/com.juul.kable/-android-peripheral/services.html
@@ -175,6 +176,16 @@ $dokka.location:com.juul.kable/Phy.LeCoded///PointingToDeclaration/core/com.juu
 $dokka.location:com.juul.kable/Phy.LeCoded/name/#/PointingToDeclaration/core/com.juul.kable/-phy/-le-coded/name.html
 $dokka.location:com.juul.kable/Phy.LeCoded/ordinal/#/PointingToDeclaration/core/com.juul.kable/-phy/-le-coded/ordinal.html
 $dokka.location:com.juul.kable/Phy///PointingToDeclaration/core/com.juul.kable/-phy/index.html
+$dokka.location:com.juul.kable/Priority.Balanced///PointingToDeclaration/core/com.juul.kable/-priority/-balanced/index.html
+$dokka.location:com.juul.kable/Priority.Balanced/name/#/PointingToDeclaration/core/com.juul.kable/-priority/-balanced/name.html
+$dokka.location:com.juul.kable/Priority.Balanced/ordinal/#/PointingToDeclaration/core/com.juul.kable/-priority/-balanced/ordinal.html
+$dokka.location:com.juul.kable/Priority.High///PointingToDeclaration/core/com.juul.kable/-priority/-high/index.html
+$dokka.location:com.juul.kable/Priority.High/name/#/PointingToDeclaration/core/com.juul.kable/-priority/-high/name.html
+$dokka.location:com.juul.kable/Priority.High/ordinal/#/PointingToDeclaration/core/com.juul.kable/-priority/-high/ordinal.html
+$dokka.location:com.juul.kable/Priority.Low///PointingToDeclaration/core/com.juul.kable/-priority/-low/index.html
+$dokka.location:com.juul.kable/Priority.Low/name/#/PointingToDeclaration/core/com.juul.kable/-priority/-low/name.html
+$dokka.location:com.juul.kable/Priority.Low/ordinal/#/PointingToDeclaration/core/com.juul.kable/-priority/-low/ordinal.html
+$dokka.location:com.juul.kable/Priority///PointingToDeclaration/core/com.juul.kable/-priority/index.html
 $dokka.location:com.juul.kable/ScanFailedException///PointingToDeclaration/core/com.juul.kable/-scan-failed-exception/index.html
 $dokka.location:com.juul.kable/ScanFailedException/errorCode/#/PointingToDeclaration/core/com.juul.kable/-scan-failed-exception/error-code.html
 $dokka.location:com.juul.kable/Scanner///PointingToDeclaration/core/com.juul.kable/-scanner/index.html
