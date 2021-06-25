@@ -1,7 +1,7 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.juul.kable////PointingToDeclaration/core/com.juul.kable/index.html
-$dokka.location:com.juul.kable//Scanner/#/PointingToDeclaration/core/com.juul.kable/-scanner.html
+$dokka.location:com.juul.kable//Scanner/#kotlin.collections.List[com.benasher44.uuid.Uuid]?/PointingToDeclaration/core/com.juul.kable/-scanner.html
 $dokka.location:com.juul.kable//characteristicOf/#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable/characteristic-of.html
 $dokka.location:com.juul.kable//descriptorOf/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable/descriptor-of.html
 $dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#android.bluetooth.BluetoothDevice#com.juul.kable.Transport#com.juul.kable.Phy/PointingToDeclaration/core/com.juul.kable/peripheral.html
