@@ -34,6 +34,7 @@ $dokka.location:com.juul.kable/Advertisement/uuids/#/PointingToDeclaration/core
 $dokka.location:com.juul.kable/AndroidPeripheral///PointingToDeclaration/core/com.juul.kable/-android-peripheral/index.html
 $dokka.location:com.juul.kable/AndroidPeripheral/connect/#/PointingToDeclaration/core/com.juul.kable/-android-peripheral/connect.html
 $dokka.location:com.juul.kable/AndroidPeripheral/disconnect/#/PointingToDeclaration/core/com.juul.kable/-android-peripheral/disconnect.html
+$dokka.location:com.juul.kable/AndroidPeripheral/mtu/#/PointingToDeclaration/core/com.juul.kable/-android-peripheral/mtu.html
 $dokka.location:com.juul.kable/AndroidPeripheral/observe/#com.juul.kable.Characteristic#kotlin.coroutines.SuspendFunction0[kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-android-peripheral/observe.html
 $dokka.location:com.juul.kable/AndroidPeripheral/read/#com.juul.kable.Characteristic/PointingToDeclaration/core/com.juul.kable/-android-peripheral/read.html
 $dokka.location:com.juul.kable/AndroidPeripheral/read/#com.juul.kable.Descriptor/PointingToDeclaration/core/com.juul.kable/-android-peripheral/read.html
