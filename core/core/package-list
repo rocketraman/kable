@@ -66,7 +66,8 @@ $dokka.location:com.juul.kable/ApplePeripheral/write/#com.juul.kable.Descriptor#
 $dokka.location:com.juul.kable/ApplePeripheral/write/#com.juul.kable.Descriptor#kotlin.ByteArray/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-peripheral/write.html
 $dokka.location:com.juul.kable/AppleScanner///PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-scanner/index.html
 $dokka.location:com.juul.kable/AppleScanner/advertisements/#/PointingToDeclaration/core/com.juul.kable/[macos-x64]-apple-scanner/advertisements.html
-$dokka.location:com.juul.kable/BluetoothLeException///PointingToDeclaration/core/com.juul.kable/-bluetooth-le-exception/index.html
+$dokka.location:com.juul.kable/BluetoothDisabledException///PointingToDeclaration/core/com.juul.kable/-bluetooth-disabled-exception/index.html
+$dokka.location:com.juul.kable/BluetoothException///PointingToDeclaration/core/com.juul.kable/-bluetooth-exception/index.html
 $dokka.location:com.juul.kable/BondState.Bonded///PointingToDeclaration/core/com.juul.kable/-bond-state/-bonded/index.html
 $dokka.location:com.juul.kable/BondState.Bonded/name/#/PointingToDeclaration/core/com.juul.kable/-bond-state/-bonded/name.html
 $dokka.location:com.juul.kable/BondState.Bonded/ordinal/#/PointingToDeclaration/core/com.juul.kable/-bond-state/-bonded/ordinal.html
