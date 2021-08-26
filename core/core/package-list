@@ -1,6 +1,52 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:com.juul.kable.logs////PointingToDeclaration/core/com.juul.kable.logs/index.html
+$dokka.location:com.juul.kable.logs//Hex/#/PointingToDeclaration/core/com.juul.kable.logs/-hex.html
+$dokka.location:com.juul.kable.logs//Hex/#kotlin.Function1[com.juul.kable.logs.HexBuilder,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable.logs/-hex.html
+$dokka.location:com.juul.kable.logs/HexBuilder///PointingToDeclaration/core/com.juul.kable.logs/-hex-builder/index.html
+$dokka.location:com.juul.kable.logs/HexBuilder/lowerCase/#/PointingToDeclaration/core/com.juul.kable.logs/-hex-builder/lower-case.html
+$dokka.location:com.juul.kable.logs/HexBuilder/separator/#/PointingToDeclaration/core/com.juul.kable.logs/-hex-builder/separator.html
+$dokka.location:com.juul.kable.logs/LogEngine///PointingToDeclaration/core/com.juul.kable.logs/-log-engine/index.html
+$dokka.location:com.juul.kable.logs/LogEngine/assert/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-log-engine/assert.html
+$dokka.location:com.juul.kable.logs/LogEngine/debug/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-log-engine/debug.html
+$dokka.location:com.juul.kable.logs/LogEngine/error/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-log-engine/error.html
+$dokka.location:com.juul.kable.logs/LogEngine/info/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-log-engine/info.html
+$dokka.location:com.juul.kable.logs/LogEngine/verbose/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-log-engine/verbose.html
+$dokka.location:com.juul.kable.logs/LogEngine/warn/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-log-engine/warn.html
+$dokka.location:com.juul.kable.logs/Logging.DataProcessor///PointingToDeclaration/core/com.juul.kable.logs/-logging/-data-processor/index.html
+$dokka.location:com.juul.kable.logs/Logging.DataProcessor/process/#kotlin.ByteArray/PointingToDeclaration/core/com.juul.kable.logs/-logging/-data-processor/process.html
+$dokka.location:com.juul.kable.logs/Logging.Format.Compact///PointingToDeclaration/core/com.juul.kable.logs/-logging/-format/-compact/index.html
+$dokka.location:com.juul.kable.logs/Logging.Format.Compact/name/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-format/-compact/name.html
+$dokka.location:com.juul.kable.logs/Logging.Format.Compact/ordinal/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-format/-compact/ordinal.html
+$dokka.location:com.juul.kable.logs/Logging.Format.Multiline///PointingToDeclaration/core/com.juul.kable.logs/-logging/-format/-multiline/index.html
+$dokka.location:com.juul.kable.logs/Logging.Format.Multiline/name/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-format/-multiline/name.html
+$dokka.location:com.juul.kable.logs/Logging.Format.Multiline/ordinal/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-format/-multiline/ordinal.html
+$dokka.location:com.juul.kable.logs/Logging.Format///PointingToDeclaration/core/com.juul.kable.logs/-logging/-format/index.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Data///PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-data/index.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Data/name/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-data/name.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Data/ordinal/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-data/ordinal.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Events///PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-events/index.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Events/name/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-events/name.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Events/ordinal/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-events/ordinal.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Warnings///PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-warnings/index.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Warnings/name/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-warnings/name.html
+$dokka.location:com.juul.kable.logs/Logging.Level.Warnings/ordinal/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/-warnings/ordinal.html
+$dokka.location:com.juul.kable.logs/Logging.Level///PointingToDeclaration/core/com.juul.kable.logs/-logging/-level/index.html
+$dokka.location:com.juul.kable.logs/Logging///PointingToDeclaration/core/com.juul.kable.logs/-logging/index.html
+$dokka.location:com.juul.kable.logs/Logging/Logging/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/-logging.html
+$dokka.location:com.juul.kable.logs/Logging/data/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/data.html
+$dokka.location:com.juul.kable.logs/Logging/engine/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/engine.html
+$dokka.location:com.juul.kable.logs/Logging/format/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/format.html
+$dokka.location:com.juul.kable.logs/Logging/level/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/level.html
+$dokka.location:com.juul.kable.logs/SystemLogEngine///PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/index.html
+$dokka.location:com.juul.kable.logs/SystemLogEngine/assert/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/[macos-x64]assert.html
+$dokka.location:com.juul.kable.logs/SystemLogEngine/debug/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/[macos-x64]debug.html
+$dokka.location:com.juul.kable.logs/SystemLogEngine/error/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/[macos-x64]error.html
+$dokka.location:com.juul.kable.logs/SystemLogEngine/info/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/[macos-x64]info.html
+$dokka.location:com.juul.kable.logs/SystemLogEngine/verbose/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/[macos-x64]verbose.html
+$dokka.location:com.juul.kable.logs/SystemLogEngine/warn/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/[macos-x64]warn.html
 $dokka.location:com.juul.kable////PointingToDeclaration/core/com.juul.kable/index.html
+$dokka.location:com.juul.kable//Scanner/#kotlin.Function1[com.juul.kable.ScannerBuilder,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-scanner.html
 $dokka.location:com.juul.kable//Scanner/#kotlin.collections.List[com.benasher44.uuid.Uuid]?/PointingToDeclaration/core/com.juul.kable/-scanner.html
 $dokka.location:com.juul.kable//characteristicOf/#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable/characteristic-of.html
 $dokka.location:com.juul.kable//descriptorOf/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable/descriptor-of.html
@@ -165,6 +211,7 @@ $dokka.location:com.juul.kable/Peripheral/state/#/PointingToDeclaration/core/co
 $dokka.location:com.juul.kable/Peripheral/write/#com.juul.kable.Characteristic#kotlin.ByteArray#com.juul.kable.WriteType/PointingToDeclaration/core/com.juul.kable/-peripheral/write.html
 $dokka.location:com.juul.kable/Peripheral/write/#com.juul.kable.Descriptor#kotlin.ByteArray/PointingToDeclaration/core/com.juul.kable/-peripheral/write.html
 $dokka.location:com.juul.kable/PeripheralBuilder///PointingToDeclaration/core/com.juul.kable/-peripheral-builder/index.html
+$dokka.location:com.juul.kable/PeripheralBuilder/logging/#kotlin.Function1[com.juul.kable.logs.Logging,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-peripheral-builder/logging.html
 $dokka.location:com.juul.kable/PeripheralBuilder/onServicesDiscovered/#kotlin.coroutines.SuspendFunction1[com.juul.kable.ServicesDiscoveredPeripheral,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-peripheral-builder/on-services-discovered.html
 $dokka.location:com.juul.kable/PeripheralBuilder/phy/#/PointingToDeclaration/core/com.juul.kable/-peripheral-builder/phy.html
 $dokka.location:com.juul.kable/PeripheralBuilder/transport/#/PointingToDeclaration/core/com.juul.kable/-peripheral-builder/transport.html
@@ -192,6 +239,10 @@ $dokka.location:com.juul.kable/ScanFailedException///PointingToDeclaration/core
 $dokka.location:com.juul.kable/ScanFailedException/errorCode/#/PointingToDeclaration/core/com.juul.kable/-scan-failed-exception/error-code.html
 $dokka.location:com.juul.kable/Scanner///PointingToDeclaration/core/com.juul.kable/-scanner/index.html
 $dokka.location:com.juul.kable/Scanner/advertisements/#/PointingToDeclaration/core/com.juul.kable/-scanner/advertisements.html
+$dokka.location:com.juul.kable/ScannerBuilder///PointingToDeclaration/core/com.juul.kable/-scanner-builder/index.html
+$dokka.location:com.juul.kable/ScannerBuilder/ScannerBuilder/#/PointingToDeclaration/core/com.juul.kable/-scanner-builder/-scanner-builder.html
+$dokka.location:com.juul.kable/ScannerBuilder/logging/#kotlin.Function1[com.juul.kable.logs.Logging,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-scanner-builder/logging.html
+$dokka.location:com.juul.kable/ScannerBuilder/services/#/PointingToDeclaration/core/com.juul.kable/-scanner-builder/services.html
 $dokka.location:com.juul.kable/Service///PointingToDeclaration/core/com.juul.kable/-service/index.html
 $dokka.location:com.juul.kable/Service/serviceUuid/#/PointingToDeclaration/core/com.juul.kable/-service/service-uuid.html
 $dokka.location:com.juul.kable/ServicesDiscoveredPeripheral///PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/index.html
@@ -203,9 +254,12 @@ $dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/write/#com.juul.kabl
 $dokka.location:com.juul.kable/State.Connected///PointingToDeclaration/core/com.juul.kable/-state/-connected/index.html
 $dokka.location:com.juul.kable/State.Connecting///PointingToDeclaration/core/com.juul.kable/-state/-connecting/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.Cancelled///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-cancelled/index.html
+$dokka.location:com.juul.kable/State.Disconnected.Status.CentralDisconnected///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-central-disconnected/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.ConnectionLimitReached///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-connection-limit-reached/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.EncryptionTimedOut///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-encryption-timed-out/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.Failed///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-failed/index.html
+$dokka.location:com.juul.kable/State.Disconnected.Status.L2CapFailure///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-l2-cap-failure/index.html
+$dokka.location:com.juul.kable/State.Disconnected.Status.LinkManagerProtocolTimeout///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-link-manager-protocol-timeout/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.PeripheralDisconnected///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-peripheral-disconnected/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.Timeout///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-timeout/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.Unknown///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-unknown/index.html
@@ -246,4 +300,5 @@ $dokka.location:com.juul.kable/WriteType.WithoutResponse/name/#/PointingToDeclar
 $dokka.location:com.juul.kable/WriteType.WithoutResponse/ordinal/#/PointingToDeclaration/core/com.juul.kable/-write-type/-without-response/ordinal.html
 $dokka.location:com.juul.kable/WriteType///PointingToDeclaration/core/com.juul.kable/-write-type/index.html
 com.juul.kable
+com.juul.kable.logs
 
