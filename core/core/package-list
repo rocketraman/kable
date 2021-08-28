@@ -252,6 +252,9 @@ $dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/requestMtu/#kotlin.I
 $dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/write/#com.juul.kable.Characteristic#kotlin.ByteArray#com.juul.kable.WriteType/PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/write.html
 $dokka.location:com.juul.kable/ServicesDiscoveredPeripheral/write/#com.juul.kable.Descriptor#kotlin.ByteArray/PointingToDeclaration/core/com.juul.kable/-services-discovered-peripheral/write.html
 $dokka.location:com.juul.kable/State.Connected///PointingToDeclaration/core/com.juul.kable/-state/-connected/index.html
+$dokka.location:com.juul.kable/State.Connecting.Bluetooth///PointingToDeclaration/core/com.juul.kable/-state/-connecting/-bluetooth/index.html
+$dokka.location:com.juul.kable/State.Connecting.Observes///PointingToDeclaration/core/com.juul.kable/-state/-connecting/-observes/index.html
+$dokka.location:com.juul.kable/State.Connecting.Services///PointingToDeclaration/core/com.juul.kable/-state/-connecting/-services/index.html
 $dokka.location:com.juul.kable/State.Connecting///PointingToDeclaration/core/com.juul.kable/-state/-connecting/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.Cancelled///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-cancelled/index.html
 $dokka.location:com.juul.kable/State.Disconnected.Status.CentralDisconnected///PointingToDeclaration/core/com.juul.kable/-state/-disconnected/-status/-central-disconnected/index.html
