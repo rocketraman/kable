@@ -180,6 +180,8 @@ $dokka.location:com.juul.kable/ManufacturerData/ManufacturerData/#kotlin.Int#kot
 $dokka.location:com.juul.kable/ManufacturerData/code/#/PointingToDeclaration/core/com.juul.kable/-manufacturer-data/code.html
 $dokka.location:com.juul.kable/ManufacturerData/data/#/PointingToDeclaration/core/com.juul.kable/-manufacturer-data/data.html
 $dokka.location:com.juul.kable/NotReadyException///PointingToDeclaration/core/com.juul.kable/-not-ready-exception/index.html
+$dokka.location:com.juul.kable/ObsoleteKableApi///PointingToDeclaration/core/com.juul.kable/-obsolete-kable-api/index.html
+$dokka.location:com.juul.kable/ObsoleteKableApi/ObsoleteKableApi/#/PointingToDeclaration/core/com.juul.kable/-obsolete-kable-api/-obsolete-kable-api.html
 $dokka.location:com.juul.kable/Options.Filter.Name///PointingToDeclaration/core/com.juul.kable/-options/-filter/-name/index.html
 $dokka.location:com.juul.kable/Options.Filter.Name/Name/#kotlin.String/PointingToDeclaration/core/com.juul.kable/-options/-filter/-name/-name.html
 $dokka.location:com.juul.kable/Options.Filter.Name/name/#/PointingToDeclaration/core/com.juul.kable/-options/-filter/-name/name.html
@@ -242,6 +244,7 @@ $dokka.location:com.juul.kable/Scanner/advertisements/#/PointingToDeclaration/c
 $dokka.location:com.juul.kable/ScannerBuilder///PointingToDeclaration/core/com.juul.kable/-scanner-builder/index.html
 $dokka.location:com.juul.kable/ScannerBuilder/ScannerBuilder/#/PointingToDeclaration/core/com.juul.kable/-scanner-builder/-scanner-builder.html
 $dokka.location:com.juul.kable/ScannerBuilder/logging/#kotlin.Function1[com.juul.kable.logs.Logging,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-scanner-builder/logging.html
+$dokka.location:com.juul.kable/ScannerBuilder/scanSettings/#/PointingToDeclaration/core/com.juul.kable/-scanner-builder/scan-settings.html
 $dokka.location:com.juul.kable/ScannerBuilder/services/#/PointingToDeclaration/core/com.juul.kable/-scanner-builder/services.html
 $dokka.location:com.juul.kable/Service///PointingToDeclaration/core/com.juul.kable/-service/index.html
 $dokka.location:com.juul.kable/Service/serviceUuid/#/PointingToDeclaration/core/com.juul.kable/-service/service-uuid.html
