@@ -37,6 +37,7 @@ $dokka.location:com.juul.kable.logs/Logging/Logging/#/PointingToDeclaration/cor
 $dokka.location:com.juul.kable.logs/Logging/data/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/data.html
 $dokka.location:com.juul.kable.logs/Logging/engine/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/engine.html
 $dokka.location:com.juul.kable.logs/Logging/format/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/format.html
+$dokka.location:com.juul.kable.logs/Logging/identifier/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/identifier.html
 $dokka.location:com.juul.kable.logs/Logging/level/#/PointingToDeclaration/core/com.juul.kable.logs/-logging/level.html
 $dokka.location:com.juul.kable.logs/SystemLogEngine///PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/index.html
 $dokka.location:com.juul.kable.logs/SystemLogEngine/assert/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/[macos-x64]assert.html
