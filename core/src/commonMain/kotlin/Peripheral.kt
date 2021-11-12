@@ -148,7 +148,7 @@ public interface Peripheral {
     public fun observe(
         characteristic: Characteristic,
         onSubscription: OnSubscriptionAction = {},
-    ): Flow<ByteArray>
+    ): Flow<Observation>
 }
 
 /**

@@ -21,7 +21,7 @@ internal sealed class AndroidObservationEvent {
         val data: ByteArray,
     ) : AndroidObservationEvent()
 
-    data class Error(
+    data class StartError(
         override val characteristic: Characteristic,
         val cause: Throwable,
     ) : AndroidObservationEvent()
@@ -61,24 +61,25 @@ internal class Observers(
     fun acquire(
         characteristic: Characteristic,
         onSubscription: OnSubscriptionAction,
-    ): Flow<ByteArray> = characteristicChanges
+    ): Flow<Observation> = characteristicChanges
         .onSubscription {
             peripheral.suspendUntilAtLeast<State.Connecting.Observes>()
-            if (observations.add(characteristic, onSubscription) == 1) {
-                peripheral.startObservation(characteristic)
+            try {
+                if (observations.add(characteristic, onSubscription) == 1) {
+                    peripheral.startObservation(characteristic)
+                }
+                onSubscription()
+            } catch (cancellation: CancellationException) {
+                throw cancellation
+            } catch (e: Exception) {
+                emit(AndroidObservationEvent.StartError(characteristic, e))
             }
-            onSubscription()
         }
         .filter {
             it.characteristic.characteristicUuid == characteristic.characteristicUuid &&
                 it.characteristic.serviceUuid == characteristic.serviceUuid
         }
-        .map {
-            when (it) {
-                is AndroidObservationEvent.Error -> throw it.cause
-                is AndroidObservationEvent.CharacteristicChange -> it.data
-            }
-        }
+        .map(::toObservation)
         .onCompletion {
             if (observations.remove(characteristic, onSubscription) == 0) {
                 try {
@@ -99,10 +100,15 @@ internal class Observers(
             } catch (cancellation: CancellationException) {
                 throw cancellation
             } catch (t: Throwable) {
-                characteristicChanges.emit(AndroidObservationEvent.Error(characteristic, t))
+                characteristicChanges.emit(AndroidObservationEvent.StartError(characteristic, t))
             }
         }
     }
+}
+
+private fun toObservation(event: AndroidObservationEvent): Observation = when (event) {
+    is AndroidObservationEvent.CharacteristicChange -> Observation.Data(event.data)
+    is AndroidObservationEvent.StartError -> Observation.Error(cause = Observation.Failure.Start(event.cause))
 }
 
 private class Observations {

@@ -360,7 +360,7 @@ public class AndroidPeripheral internal constructor(
     public override fun observe(
         characteristic: Characteristic,
         onSubscription: OnSubscriptionAction,
-    ): Flow<ByteArray> = observers.acquire(characteristic, onSubscription)
+    ): Flow<Observation> = observers.acquire(characteristic, onSubscription)
 
     internal suspend fun startObservation(characteristic: Characteristic) {
         val platformCharacteristic = platformServices.findCharacteristic(characteristic)
