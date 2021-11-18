@@ -15,6 +15,7 @@ import kotlin.test.assertTrue
 class AdvertisementTest {
     @Test
     fun manufacturerData_advertisementWithMoreThanTwoBytes_hasCodeAndData() {
+        println("manufacturerData_advertisementWithMoreThanTwoBytes_hasCodeAndData")
         val advertisement = fakeAdvertisement(
             ubyteArrayOf(
                 0xc3u, 0x05u, // little-endian manufacturer id
@@ -30,6 +31,7 @@ class AdvertisementTest {
 
     @Test
     fun manufacturerData_advertisementWithTwoBytes_hasCodeAndEmptyData() {
+        println("manufacturerData_advertisementWithTwoBytes_hasCodeAndEmptyData")
         val advertisement = fakeAdvertisement(
             ubyteArrayOf(
                 0xc3u, 0x05u, // little-endian manufacturer id
@@ -43,6 +45,7 @@ class AdvertisementTest {
 
     @Test
     fun manufacturerData_advertisementWithFewerThanTwoBytes_isNull() {
+        println("manufacturerData_advertisementWithFewerThanTwoBytes_isNull")
         val advertisement = fakeAdvertisement(
             ubyteArrayOf(0x01u)
         )
