@@ -48,7 +48,7 @@ $dokka.location:com.juul.kable.logs/SystemLogEngine/verbose/#kotlin.Throwable?#k
 $dokka.location:com.juul.kable.logs/SystemLogEngine/warn/#kotlin.Throwable?#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable.logs/-system-log-engine/warn.html
 $dokka.location:com.juul.kable////PointingToDeclaration/core/com.juul.kable/index.html
 $dokka.location:com.juul.kable//Scanner/#kotlin.Function1[com.juul.kable.ScannerBuilder,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-scanner.html
-$dokka.location:com.juul.kable//Scanner/#kotlin.collections.List[com.benasher44.uuid.Uuid]?/PointingToDeclaration/core/com.juul.kable/-scanner.html
+$dokka.location:com.juul.kable//Scanner/#kotlin.collections.List[com.juul.kable.Filter]?/PointingToDeclaration/core/com.juul.kable/-scanner.html
 $dokka.location:com.juul.kable//characteristicOf/#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable/characteristic-of.html
 $dokka.location:com.juul.kable//descriptorOf/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/core/com.juul.kable/descriptor-of.html
 $dokka.location:com.juul.kable//peripheral/kotlinx.coroutines.CoroutineScope#android.bluetooth.BluetoothDevice#com.juul.kable.Transport#com.juul.kable.Phy/PointingToDeclaration/core/com.juul.kable/peripheral.html
@@ -134,6 +134,10 @@ $dokka.location:com.juul.kable/DiscoveredCharacteristic/serviceUuid/#/PointingTo
 $dokka.location:com.juul.kable/DiscoveredService///PointingToDeclaration/core/com.juul.kable/-discovered-service/index.html
 $dokka.location:com.juul.kable/DiscoveredService/characteristics/#/PointingToDeclaration/core/com.juul.kable/-discovered-service/characteristics.html
 $dokka.location:com.juul.kable/DiscoveredService/serviceUuid/#/PointingToDeclaration/core/com.juul.kable/-discovered-service/service-uuid.html
+$dokka.location:com.juul.kable/Filter.Service///PointingToDeclaration/core/com.juul.kable/-filter/-service/index.html
+$dokka.location:com.juul.kable/Filter.Service/Service/#com.benasher44.uuid.Uuid/PointingToDeclaration/core/com.juul.kable/-filter/-service/-service.html
+$dokka.location:com.juul.kable/Filter.Service/uuid/#/PointingToDeclaration/core/com.juul.kable/-filter/-service/uuid.html
+$dokka.location:com.juul.kable/Filter///PointingToDeclaration/core/com.juul.kable/-filter/index.html
 $dokka.location:com.juul.kable/GattRequestRejectedException///PointingToDeclaration/core/com.juul.kable/-gatt-request-rejected-exception/index.html
 $dokka.location:com.juul.kable/GattStatusException///PointingToDeclaration/core/com.juul.kable/-gatt-status-exception/index.html
 $dokka.location:com.juul.kable/IOException///PointingToDeclaration/core/com.juul.kable/-i-o-exception/index.html
@@ -233,6 +237,7 @@ $dokka.location:com.juul.kable/Scanner///PointingToDeclaration/core/com.juul.ka
 $dokka.location:com.juul.kable/Scanner/advertisements/#/PointingToDeclaration/core/com.juul.kable/-scanner/advertisements.html
 $dokka.location:com.juul.kable/ScannerBuilder///PointingToDeclaration/core/com.juul.kable/-scanner-builder/index.html
 $dokka.location:com.juul.kable/ScannerBuilder/ScannerBuilder/#/PointingToDeclaration/core/com.juul.kable/-scanner-builder/-scanner-builder.html
+$dokka.location:com.juul.kable/ScannerBuilder/filters/#/PointingToDeclaration/core/com.juul.kable/-scanner-builder/filters.html
 $dokka.location:com.juul.kable/ScannerBuilder/logging/#kotlin.Function1[com.juul.kable.logs.Logging,kotlin.Unit]/PointingToDeclaration/core/com.juul.kable/-scanner-builder/logging.html
 $dokka.location:com.juul.kable/ScannerBuilder/services/#/PointingToDeclaration/core/com.juul.kable/-scanner-builder/services.html
 $dokka.location:com.juul.kable/Service///PointingToDeclaration/core/com.juul.kable/-service/index.html
