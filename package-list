@@ -1,0 +1,8 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:core
+com.juul.kable
+com.juul.kable.logs
+module:log-engine-tuulbox
+com.juul.kable.logs
