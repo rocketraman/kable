@@ -15,6 +15,7 @@ import android.bluetooth.BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE
 import android.bluetooth.BluetoothGattDescriptor.ENABLE_INDICATION_VALUE
 import android.bluetooth.BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE
 import com.benasher44.uuid.uuidFrom
+import com.juul.kable.AndroidPeripheral.ConnectionState.NotReady
 import com.juul.kable.WriteType.WithResponse
 import com.juul.kable.WriteType.WithoutResponse
 import com.juul.kable.external.CLIENT_CHARACTERISTIC_CONFIG_UUID
@@ -27,15 +28,9 @@ import com.juul.kable.gatt.Response.OnServicesDiscovered
 import com.juul.kable.logs.Logger
 import com.juul.kable.logs.Logging
 import com.juul.kable.logs.detail
-import kotlinx.atomicfu.atomic
-import kotlinx.atomicfu.updateAndGet
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.CoroutineStart.LAZY
-import kotlinx.coroutines.CoroutineStart.UNDISPATCHED
-import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -44,8 +39,9 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import kotlin.coroutines.CoroutineContext
 
 private val clientCharacteristicConfigUuid = uuidFrom(CLIENT_CHARACTERISTIC_CONFIG_UUID)
 
@@ -53,19 +49,27 @@ private val clientCharacteristicConfigUuid = uuidFrom(CLIENT_CHARACTERISTIC_CONF
 // https://github.com/JuulLabs/kable/issues/295
 private const val DISCOVER_SERVICES_RETRIES = 5
 
+// fixme: Drop CoroutineScope
 public actual fun CoroutineScope.peripheral(
     advertisement: Advertisement,
     builderAction: PeripheralBuilderAction,
 ): Peripheral = peripheral(advertisement.bluetoothDevice, builderAction)
 
-public fun CoroutineScope.peripheral(
+public fun peripheral(
+    identifier: Identifier,
+    builderAction: PeripheralBuilderAction = {},
+): Peripheral {
+    val bluetoothDevice = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(identifier)
+    return peripheral(bluetoothDevice, builderAction)
+}
+
+public fun peripheral(
     bluetoothDevice: BluetoothDevice,
     builderAction: PeripheralBuilderAction = {},
 ): Peripheral {
     val builder = PeripheralBuilder()
     builder.builderAction()
     return AndroidPeripheral(
-        coroutineContext,
         bluetoothDevice,
         builder.transport,
         builder.phy,
@@ -75,18 +79,9 @@ public fun CoroutineScope.peripheral(
     )
 }
 
-public fun CoroutineScope.peripheral(
-    identifier: Identifier,
-    builderAction: PeripheralBuilderAction = {},
-): Peripheral {
-    val bluetoothDevice = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(identifier)
-    return peripheral(bluetoothDevice, builderAction)
-}
-
 public enum class Priority { Low, Balanced, High }
 
 public class AndroidPeripheral internal constructor(
-    parentCoroutineContext: CoroutineContext,
     private val bluetoothDevice: BluetoothDevice,
     private val transport: Transport,
     private val phy: Phy,
@@ -102,22 +97,27 @@ public class AndroidPeripheral internal constructor(
     private val _state = MutableStateFlow<State>(State.Disconnected())
     public override val state: StateFlow<State> = _state.asStateFlow()
 
+    private val bluetoothAdapterStateListener: BluetoothAdapterStateListener = { state ->
+        if (state == STATE_OFF) {
+            closeConnection()
+            _state.value = State.Disconnected()
+        }
+    }
+//    private val receiver = registerBluetoothStateBroadcastReceiver { state ->
+//        if (state == STATE_OFF) {
+//            closeConnection()
+//            _state.value = State.Disconnected()
+//        }
+//    }
+
     private val job = SupervisorJob(parentCoroutineContext[Job]).apply {
         invokeOnCompletion {
             closeConnection()
             threading.close()
         }
     }
-    private val scope = CoroutineScope(parentCoroutineContext + job)
 
-    init {
-        bluetoothState
-            .filter { state -> state == STATE_OFF }
-            .onEach { closeConnection() }
-            .launchIn(scope)
-    }
-
-    private val threading = bluetoothDevice.threading()
+    private val threading by lazy { bluetoothDevice.threading() }
 
     private val _mtu = MutableStateFlow<Int?>(null)
 
@@ -139,12 +139,20 @@ public class AndroidPeripheral internal constructor(
     public override val services: List<DiscoveredService>?
         get() = _discoveredServices?.toList()
 
-    @Volatile
-    private var _connection: Connection? = null
-    private val connection: Connection
-        inline get() = _connection ?: throw NotReadyException(toString())
+    private sealed class ConnectionState {
+        object NotReady : ConnectionState()
+        data class Active(val connection: Connection) : ConnectionState()
+        data class Error(val throwable: Throwable) : ConnectionState()
+    }
 
-    private val connectJob = atomic<Deferred<Unit>?>(null)
+    @Volatile
+    private var _connection: ConnectionState = NotReady
+    private val connection: Connection
+        get() = when (val state = _connection) {
+            NotReady -> throw NotReadyException(toString())
+            is ConnectionState.Active -> state.connection
+            is ConnectionState.Error -> throw NotReadyException(toString(), state.throwable)
+        }
 
     override val name: String? get() = bluetoothDevice.name
 
@@ -156,54 +164,63 @@ public class AndroidPeripheral internal constructor(
             phy,
             _state,
             _mtu,
+            observers.characteristicChanges,
             logging,
             threading,
-            invokeOnClose = { connectJob.value = null },
+            invokeOnClose = { _connection = NotReady },
         ) ?: throw ConnectionRejectedException()
     }
 
-    /** Creates a connect [Job] that completes when connection is established, or failure occurs. */
-    private fun connectAsync() = scope.async(start = LAZY) {
-        try {
-            val connection = establishConnection().also { _connection = it }
-
-            connection
-                .characteristicChanges
-                .onEach(observers.characteristicChanges::emit)
-                .launchIn(scope, start = UNDISPATCHED)
-
-            suspendUntilOrThrow<State.Connecting.Services>()
-            discoverServices()
-            onServicesDiscovered(ServicesDiscoveredPeripheral(this@AndroidPeripheral))
-            _state.value = State.Connecting.Observes
-            logger.verbose { message = "Configuring characteristic observations" }
-            observers.onConnected()
-        } catch (t: Throwable) {
-            closeConnection()
-            logger.error(t) { message = "Failed to connect" }
-            throw t
-        }
-
-        logger.info { message = "Connected" }
-        _state.value = State.Connected
-    }
-
     private fun closeConnection() {
-        _connection?.close()
-        _connection = null
+        // fixme: Potential race condition (against `connect`).
+        (_connection as? ConnectionState.Active)?.connection?.close()
+        _connection = NotReady
 
         // Avoid trampling existing `Disconnected` state (and its properties) by only updating if not already `Disconnected`.
         _state.update { previous -> previous as? State.Disconnected ?: State.Disconnected() }
     }
 
+    private val connectMutex = Mutex()
+
     public override suspend fun connect() {
         checkBluetoothAdapterState(expected = STATE_ON)
-        connectJob.updateAndGet { it ?: connectAsync() }!!.await()
+
+        connectMutex.withLock {
+            when (val state = _connection) {
+                NotReady -> TODO()
+                is ConnectionState.Active -> return
+                is ConnectionState.Error -> throw state.throwable
+            }
+
+            try {
+                val connection = ConnectionState.Active(establishConnection())
+//                connection
+//                    .characteristicChanges
+//                    .onEach(observers.characteristicChanges::emit)
+//                    .launchIn(scope, start = UNDISPATCHED)
+
+                suspendUntilOrThrow<State.Connecting.Services>()
+                discoverServices()
+                _connection = connection
+                onServicesDiscovered(ServicesDiscoveredPeripheral(this@AndroidPeripheral))
+                _state.value = State.Connecting.Observes
+                logger.verbose { message = "Configuring characteristic observations" }
+                observers.onConnected()
+            } catch (t: Throwable) {
+                closeConnection()
+                logger.error(t) { message = "Failed to connect" }
+                _connection = ConnectionState.Error(t)
+                throw t
+            }
+
+            logger.info { message = "Connected" }
+            _state.value = State.Connected
+        }
     }
 
     public override suspend fun disconnect() {
         try {
-            _connection?.apply {
+            (_connection as? ConnectionState.Active)?.connection?.apply {
                 bluetoothGatt.disconnect()
                 suspendUntil<State.Disconnected>()
             }
