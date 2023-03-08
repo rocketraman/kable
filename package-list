@@ -5,5 +5,7 @@ $dokka.location:com.juul.kable/Reason/values/#/PointingToDeclaration/core/com.j
 module:core
 com.juul.kable
 com.juul.kable.logs
+module:exceptions
+com.juul.kable
 module:log-engine-tuulbox
 com.juul.kable.logs
