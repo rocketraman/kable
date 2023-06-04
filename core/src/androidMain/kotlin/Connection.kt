@@ -1,7 +1,10 @@
 package com.juul.kable
 
 import android.bluetooth.BluetoothGatt
+import android.bluetooth.BluetoothGatt.GATT_INSUFFICIENT_AUTHENTICATION
+import android.bluetooth.BluetoothGatt.GATT_INSUFFICIENT_ENCRYPTION
 import android.bluetooth.BluetoothGatt.GATT_SUCCESS
+import com.juul.kable.external.GATT_AUTH_FAIL
 import com.juul.kable.gatt.Callback
 import com.juul.kable.gatt.GattStatus
 import com.juul.kable.gatt.Response
@@ -22,7 +25,14 @@ public class OutOfOrderGattCallbackException internal constructor(
     message: String,
 ) : IllegalStateException(message)
 
-private val GattSuccess = GattStatus(GATT_SUCCESS)
+internal class BondRequiredException : IllegalStateException()
+
+private val Success = GattStatus(GATT_SUCCESS)
+private val BondingStatuses = listOf(
+    GattStatus(GATT_AUTH_FAIL),
+    GattStatus(GATT_INSUFFICIENT_AUTHENTICATION),
+    GattStatus(GATT_INSUFFICIENT_ENCRYPTION),
+)
 
 internal class Connection(
     parentCoroutineContext: CoroutineContext,
@@ -57,6 +67,7 @@ internal class Connection(
      *
      * @throws GattRequestRejectedException if underlying `BluetoothGatt` method call returns `false`.
      * @throws GattStatusException if response has a non-`GATT_SUCCESS` status.
+     * @throws BondRequiredException if [action] requires authentication (i.e. bonding).
      */
     suspend inline fun <reified T> execute(
         crossinline action: BluetoothGatt.() -> Boolean,
@@ -89,14 +100,17 @@ internal class Connection(
         }
         deferredResponse = null
 
-        if (response.status != GattSuccess) throw GattStatusException(response.toString())
-
-        // `lock` should always enforce a 1:1 matching of request to response, but if an Android `BluetoothGattCallback`
-        // method gets called out of order then we'll cast to the wrong response type.
-        response as? T
-            ?: throw OutOfOrderGattCallbackException(
-                "Unexpected response type ${response.javaClass.simpleName} received",
-            )
+        when (response.status) {
+            // `lock` should always enforce a 1:1 matching of request to response, but if an Android `BluetoothGattCallback`
+            // method gets called out of order then we'll cast to the wrong response type.
+            Success ->
+                response as? T
+                    ?: throw OutOfOrderGattCallbackException(
+                        "Unexpected response type ${response.javaClass.simpleName} received",
+                    )
+            in BondingStatuses -> throw BondRequiredException()
+            else -> throw GattStatusException(response.toString())
+        }
     }
 
     /**
@@ -120,7 +134,7 @@ internal class Connection(
             throw ConnectionLostException(cause = e)
         }
 
-        if (response.status != GattSuccess) throw GattStatusException(response.toString())
+        if (response.status != Success) throw GattStatusException(response.toString())
         response.mtu
     }
 
