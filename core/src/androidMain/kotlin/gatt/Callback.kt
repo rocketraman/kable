@@ -108,10 +108,7 @@ internal class Callback(
             detail("newState", newState.connectionStateString)
         }
 
-        if (newState == STATE_DISCONNECTED) {
-            gatt.close()
-            disconnectedAction?.invoke()
-        }
+        if (newState == STATE_DISCONNECTED) gatt.close()
 
         when (newState) {
             STATE_CONNECTING -> state.value = State.Connecting.Bluetooth
